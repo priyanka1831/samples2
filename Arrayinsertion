@@ -1,0 +1,28 @@
+importjava.util.Scanner;
+publicclassArrayInsertion {
+    publicstaticvoid main(String[] args) {
+        Scanner in= newScanner(System.in);// getting inputs from user
+        System.out.print("Enter no. of elements you want in array:");
+        intsize = in.nextInt();  // takes size of the array 
+        intarr[] = newint[size + 1];  // Initializing size of the array
+        System.out.println("Enter array elements:");
+        for (inti = 0; i<size; i++) {  // taking elements to the array
+            arr[i] = in.nextInt();
+        }
+        System.out.print("Enter the position to insert:");
+        intposition = in.nextInt();  // taking position to insert the element
+        System.out.print("Enter the element you want to insert:");
+        intnum = in.nextInt();  // taking element to insert in given position
+        for (inti = (size - 1); i>= (position - 1); i--)// inserting the given value at specified position
+        {
+            arr[i + 1] = arr[i];
+        }
+        arr[position - 1] = num;  // inserting element in give position
+        System.out.print("Array after insertion:");// displaying the result
+        for (inti: arr) {  // printing output after insertion
+            System.out.print(i+" ");
+        }
+        in.close();
+    }
+}
+
