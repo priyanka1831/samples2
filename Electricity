@@ -1,0 +1,74 @@
+importjava.util.*;
+publicclass Electricity {
+    publicstaticvoid main(String[] args) {
+        Scanner in=new Scanner(System.in);  // Scanner class
+        System.out.println("Enter Customer ID: ");   // Taking inputs from console
+        longcustomer_id = in.nextLong();
+        System.out.println("Enter Customer Name: ");
+        String customer_name = in.next();
+        System.out.println("Nubmer of Units spent: ");
+        intunits_spent = in.nextInt();
+        ElectricityBille = newElectricityBill(customer_id, customer_name, units_spent);   // calling electricity bill constructor in electricity bill class
+        System.out.println("ID    : " + e.getCustomer_id());  // Printing details
+        System.out.println("Name  : " + e.getCustomer_name());  
+        System.out.println("Units spent :" + e.getUnits_spent());
+        @SuppressWarnings("static-access")
+        doubleamount = e.billAmount(e.getUnits_spent());   
+        e.subcharge(amount);
+        in.close();  // Scanner close
+    }
+}
+
+classElectricityBill {
+    privatelongcustomer_id;  // declaring private variables
+    private String customer_name;
+    privateintunits_spent;
+
+    publicElectricityBill() {// constructor creating
+        super();
+    }
+    publicElectricityBill(longcustomer_id, String customer_name, intunits_spent) {
+        super();
+        this.customer_id = customer_id;  //Assigning inputs 
+        this.customer_name = customer_name;
+        this.units_spent = units_spent;
+    }
+    // Getter setter methods
+    publiclonggetCustomer_id() {
+        returncustomer_id;
+    }
+    publicvoidsetCustomer_id(longcustomer_id) {
+        this.customer_id = customer_id;
+    }
+    public String getCustomer_name() {
+        returncustomer_name;
+    }
+    publicvoidsetCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+    }
+    publicintgetUnits_spent() {
+        returnunits_spent;
+    }
+    publicvoidsetUnits_spent(intunits_spent) {
+        this.units_spent = units_spent;
+    }
+    publicstaticdoublebillAmount(intunits_spent) // creating method to calculating bill amount
+    {
+        doublepay_amount;
+        // Checking conditions
+        if (units_spent<= 50) {
+            pay_amount = units_spent * 0.50;
+        } elseif (50 <units_spent&&units_spent<= 150) {
+            pay_amount = units_spent * 0.75;
+        } elseif (150 <units_spent&&units_spent<= 250) {
+            pay_amount = units_spent * 1.20;
+        } else {
+            pay_amount = units_spent * 1.50;
+        }
+        returnpay_amount;
+    }
+    public<finalize> finalize subcharge(doublepay_amount) {
+        System.out.println("Bill Amount :" + (pay_amount + (0.2 * pay_amount)));
+        returnnull;
+    }
+}
