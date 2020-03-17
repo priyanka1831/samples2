@@ -1,0 +1,56 @@
+importjava.util.*;
+publicclass Student1{
+    publicstaticvoid main(String[] args) {
+        Student stu = newStudent();  // Creating object
+        stu.add();  // calling method
+    }
+}
+class Student {
+    // declaring variables
+    intreg_number;
+    String Name;
+    doubleMark;
+    // constructor 
+    publicStudent(intreg_no, String name, doublemark) {
+        super();
+        // assiging inputs
+        this.reg_number = reg_no;
+        this.Name = name;
+        this.Mark = mark;
+    }
+
+    Student() {
+    }
+
+    publicvoidadd() {
+        System.out.println("Enter the number of students");
+        Scanner in = new Scanner(System.in);  // Scanner class
+        // Declaring variables
+        intreg_no;
+        String name;
+        doublemark;
+        intnum = in.nextInt();
+        Student[] stu = new Student[num];  // array creation
+        for (inti = 1; i<=num; i++) {  // taking student details from console
+            System.out.println("Enter the Registration number "+i);
+            reg_no = in.nextInt();
+            System.out.println("Enter the Student number "+i);
+            name = in.next();
+            System.out.println("Enter the Mark ");
+            mark = in.nextDouble();
+            Student s = newStudent(reg_no, name, mark);
+            stu[i-1] = s;
+        }
+        for (Student st :stu) {  // printing output
+            System.out.println(st.toString());
+        }
+        in.close();  // closing scanner class
+    }
+
+    @Override
+    public String toString() {  // to string method
+        return"Student [Reg_no=" + reg_number + ", Name=" + Name + ", Mark=" + Mark + "]";
+
+    }
+}
+
