@@ -1,0 +1,47 @@
+publicclassAreaOfShape {
+    voidArea(floatbase, floatheight) {// area for the triangle
+        floatarea = 0.0f;
+        area = 0.5f * base * height;
+        System.out.println("Area of triangle:" + area);  // printing area for triangle
+    }
+
+    voidArea(doubleheight, floatwidth) {// area for the rectangle
+        doublearea = 0.0d;
+        area = height * width;
+        System.out.println("Area of rectangle:" + area); //printing area for rectangle
+    }
+
+    voidArea(floatside) {// area for the square
+        floatarea = 0.0f;
+        area = side * side;
+        System.out.println("Area of square:" + area);  //printing area for square 
+    }
+    staticvoidArea(floatheight, float[] base) {  // area for the triangle using VAR-arg
+        floatarea = 0.0f;
+        area = 0.5f * base[0] * height;
+        System.out.println("Area of triangle var:" + area);  // printing area for triangle 
+    }
+
+    staticvoidArea(floatheight, double[] width) {  // Area for the rectangle using VAR-arg
+        doublearea = 0.0d;
+        area = height * width[0];
+        System.out.println("Area of rectangle var:" + area);// printing area for triangle
+    }
+    staticvoid Area(float[] side) {  // Area for the square using VAR-arg
+        floatarea = 0.0f;
+        area = side[0] * side[0];
+        System.out.println("Area of square var:" + area);  // Printing area of the square
+    }
+
+    publicstaticvoid main(String[] args) {
+        AreaOfShapeaos = newAreaOfShape();// creating object
+        //passing values to the methods
+        aos.Area(12.0f, 13.0f);
+        aos.Area(15.0d, 14.0f);
+        aos.Area(12.0f);
+        System.out.println("Using Varargs");
+        aos.Area(12.0f, 13.0f);
+        aos.Area(15.0d, 14.0f);
+        aos.Area(12.0f);
+    }
+}
