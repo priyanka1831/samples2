@@ -1,0 +1,72 @@
+importjava.util.Scanner;
+
+publicclass Matrix {
+    //Declaring Variables
+    introwsOfmatrix1;
+    intcoloumnsOfMatrix1;
+    introwsOfMatrix2;
+    intcoloumnsOfMatrix2;
+    introws;
+    intcoloumns;
+
+    publicvoidtranspose() {
+        Scanner in = new Scanner(System.in); // Scanner class
+        System.out.println("Transpose Matrix");  // Taking inputs from the console
+        System.out.println("enter number of rows of matrix");
+        rows = in.nextInt();
+        System.out.println("enter number of columns of  matrix");
+        coloumns = in.nextInt();
+        System.out.println("enter values for matrix");
+        intarray[][] = newint[rows][coloumns];  // Original array
+        int[][] temparray = newint[coloumns][rows];  // temporary array to store elements
+        for (intouter = 0; outer<rows; outer++) {  
+            for (intinner = 0; inner<coloumns; inner++) {
+                array[outer][inner] = in.nextInt();
+            }
+        }
+        if (rows == coloumns) {
+            System.out.println("Transpose of a matrix is:");
+            // calculating transpose of matrix
+            for (intouter = 0; outer<coloumns; outer++) {  //copying the array elements to temp
+                for (intinner = 0; inner<coloumns; inner++) {
+                    inttemprory = array[outer][inner];
+                    temparray[inner][outer] = temprory;
+                }
+            }
+        }
+        if (rows>coloumns || rows<coloumns) {
+            System.out.println("Transpose of a matrix is:");
+            intref1 = 0;
+            // calculating transpose of matrix
+            for (intouter = 0; outer<rows; outer++) {
+                if (ref1 != 0) {
+                    ref1++;
+                }
+                for (intinner = 0; inner<coloumns; inner++) {  // for transpose of the matrix 
+                    inttemporary = array[outer][inner];
+                    temparray[ref1][outer] = temporary;
+                    ++ref1;
+                    if (ref1 == coloumns) {
+                        ref1 = 0;
+                    }
+
+                }
+            }
+        }
+        for (int[] element : temparray) {  // printing output array
+            for (intindex :element) {
+                System.out.print(" " + index);
+            }
+            System.out.println();
+        }
+        in.close();  //scanner close
+    }
+
+    publicstaticvoid main(String[] args) {
+        Matrix matrix = newMatrix(); // creating object
+        matrix.transpose(); // calling method
+
+    }
+}
+
+
