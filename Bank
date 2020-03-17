@@ -1,0 +1,61 @@
+importjava.util.*;
+publicclass Bank {
+    publicstaticvoid main(String[] args) {
+        longacct_no;   // Declaring variables
+        String customer_name;
+        String trans_type;
+        doubletrans_amount;
+        doublebal_amount;
+        Scanner in = new Scanner(System.in); // scanner class
+        System.out.println("Enter Customer Name:");  // Taking inputs from console
+        customer_name = in.next();
+        System.out.println("Enter Account Number:");
+        acct_no = in.nextLong();
+        System.out.println("Enter Transtion Type:");
+        trans_type = in.next();
+        System.out.println("Enter Trans Amount:");
+        trans_amount = in.nextLong();
+        System.out.println("Enter Balance:");
+        bal_amount = in.nextDouble();
+        Banking b = newBanking(acct_no, customer_name, trans_type, trans_amount, bal_amount);  // calling constructor in banking class 
+        b.transaction(); // calling method
+        in.close();  //closing Scanner class 
+    }
+
+}
+
+class Banking {
+    privatelongacct_no;
+    static String customer_name;
+    String trans_type;
+    privatedoubletrans_amount, bal_amount;
+    publicBanking(longacct_no, String customer_name, String trans_type, doubletrans_amount, doublebal_amount) {
+        super();
+        this.acct_no = acct_no;  // Assign inputs to the variable using super keyword
+        Banking.customer_name = customer_name;
+        this.trans_type = trans_type;
+        this.trans_amount = trans_amount;
+        this.bal_amount = bal_amount;
+    }
+    publicvoidtransaction() {
+        doubleamount = 0;
+        if (trans_type.equalsIgnoreCase("withdrawal")) { // checking for withdrawal or not
+            if (trans_amount<= bal_amount) {
+                amount = bal_amount - trans_amount;
+
+            } else {
+                System.out.println("invaid transaction");
+            }
+        }
+        if (trans_type.equalsIgnoreCase("deposit")) { // checking for deposit or not
+            amount = bal_amount + trans_amount;
+
+        }
+        System.out.println("Customer Name :" + customer_name);// displaying the results
+        System.out.println("Account Number :" + acct_no);
+        System.out.println("TranstionType :" + trans_type);
+        System.out.println("Trans Amount :" + trans_amount);
+        System.out.println("old Balance :" + bal_amount);
+        System.out.println("New Balance :" + amount);
+    }
+}
