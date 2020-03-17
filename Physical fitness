@@ -1,0 +1,105 @@
+importjava.util.*;
+publicclassPhysicalFitness {
+
+    publicstaticvoid main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter Name:");
+        String name = in.next();
+        System.out.println("Enter Gender:");
+        String gender= in.next();
+        if (gender.equalsIgnoreCase("male")) // checking gender is male or not
+        {
+            System.out.println("Enter age:");
+            intage = in.nextInt();
+            if (age< 20) // checking age condition and enters if age is greater than 20
+            {
+                System.out.println("Not Eligible ");
+            }
+            elseif (age>= 20 &&age<= 30) { // Condition executes if the age in between 20 and 30 
+                System.out.println("Enter weight of the candidate in pounds or kgs");
+                floatwt = in.nextFloat();
+                if (wt> 100) {
+                    wt = (float) (wt / 2.2);//  conversion from kgs to pounds
+                }
+                if (70.4545 <= wt&&wt<= 79.5454) {  // checking condition and executes if the weight is in between the given condition
+                    System.out.println("Enter height of candidate cms");
+                    floatht = in.nextFloat();
+                    if (ht< 10) {
+                        ht = ht * 2.54f;
+                    }
+                    if (13.207 <= ht&&ht<= 13.969) {  // checking condition and executes if the height is in between the given condition and display the result
+                        System.out.println("Name   : " + name);
+                        System.out.println("Gender : " + gender);
+                        System.out.println("Weight : " + wt + " (in kgs)");
+                        System.out.println("Hieght : " + ht + " (in cms)");
+                        System.out.println(name + " is eligible");
+                    } else {
+                        System.out.println("Not Eligible");
+                    }
+                } else {
+                    System.out.println("Not Eligible");
+                }
+}
+
+            elseif (age> 30 &&age<= 40) {  // checking age condition
+                System.out.println("Enter weight of the candidate");
+                floatwt = in.nextFloat();
+
+                if (wt> 100) {
+                    wt = (float) (wt / 2.2);
+                }
+                if (77.2727 <= wt&&wt<= 81.8181) {  // checking weight condition
+                    System.out.println("Enter height of the candidate");
+                    floatht = in.nextFloat();
+
+                    if (ht< 10) {
+                        ht = ht * 2.54f;
+                    }
+                    if (13.716 <= ht&&ht<= 14.224) {  // checking height condition and display the result
+                        System.out.println("Name   : " + name);
+                        System.out.println("Gender : " + gender);
+                        System.out.println("Weight : " + wt);
+                        System.out.println("Hieght : " + ht);
+                        System.out.println(name + " is eligible");
+                    } else {
+                        System.out.println("Not Eligible");
+                    }
+                } else {
+                    System.out.println("Not Eligible");
+                }
+            } elseif (40 <age&&age<= 50) {  // Checking age condition 
+                System.out.println("Enter weight of the candidate");
+                floatwt = in.nextFloat();
+
+                if (wt> 100) {
+                    wt = (float) (wt / 2.2);
+                }
+                if (79.5454 <= wt&&wt<= 84.0909) {  // checking weight condition
+                    System.out.println("Enter height of candidate");
+                    floatht = in.nextFloat();
+
+                    if (ht< 10) {
+                        ht = ht * 2.54f;
+                    }
+                    if (14.224 <= ht&&ht<= 15.24) {  // checking height condition and display the result
+                        System.out.println("Name   : " + name);
+                        System.out.println("Gender : " + gender);
+                        System.out.println("Weight : " + wt);
+                        System.out.println("Hieght : " + ht);
+                        System.out.println(name + " is eligible");
+                    } else {
+                        System.out.println("Not Eligible");
+                    }
+                } else {
+                    System.out.println("Not Eligible");
+                }
+            } else {
+                System.out.println("Not Eligible");
+            }
+        } else {
+            System.out.println("Only male candidates are allowed");
+        }
+        in.close();
+    }
+}
+
