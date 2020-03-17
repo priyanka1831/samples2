@@ -1,0 +1,65 @@
+importjava.util.Scanner;
+publicclassMultiplicationOfMatrix {
+    // declaring variables
+    introwsOfmatrix1;
+    intcoloumnsOfMatrix1;
+    introwsOfMatrix2;
+    intcoloumnsOfMatrix2;
+    // Multiplication method
+    publicvoidmultiplication() {
+        Scanner in = new Scanner(System.in);  // Scanner class
+        System.out.println("Multiplication of two matrices");  // Taking details of the matrix
+        System.out.println("enter number of rows of first matrix");
+        rowsOfmatrix1 = in.nextInt();
+        System.out.println("enter number of columns of first matrix");
+        coloumnsOfMatrix1 = in.nextInt();
+        System.out.println("enter number of rows of second matrix");
+        rowsOfMatrix2 = in.nextInt();
+        System.out.println("enter number of columns of second matrix");
+        coloumnsOfMatrix2 = in.nextInt();
+        if (coloumnsOfMatrix1 == rowsOfMatrix2) {  // if the condition is true then the only if condition executes
+
+            intarray1[][] = newint[rowsOfmatrix1][coloumnsOfMatrix1];
+            intarray2[][] = newint[rowsOfMatrix2][coloumnsOfMatrix2];
+            intresult[][] = newint[rowsOfmatrix1][coloumnsOfMatrix2];
+            intsum = 0;
+            System.out.println("Enter values for A matrix");  // taking values for the one matrix
+            for (intouter = 0; outer<rowsOfmatrix1; outer++) {
+                for (intinner = 0; inner<coloumnsOfMatrix1; inner++) {
+                    array1[outer][inner] = in.nextInt();
+                }
+            }
+            System.out.println("Enter values for B matrix");  // taking values for the second matrix
+            for (intouter = 0; outer<rowsOfMatrix2; outer++) {
+                for (intinner = 0; inner<coloumnsOfMatrix2; inner++) {
+                    array2[outer][inner] = in.nextInt();
+                }
+            }
+            System.out.println("Multiplication of a matrix A and B:");  // multiplying matrices
+            for (intouter = 0; outer<rowsOfmatrix1; outer++) {
+                // calculating multiplication of matrices
+                for (intinner = 0; inner<coloumnsOfMatrix2; inner++) {
+                    for (intdeeper = 0; deeper<rowsOfMatrix2; deeper++) {
+                        sum = sum + (array1[inner][deeper] * array2[deeper][inner]);
+                    }
+                    result[outer][inner] = sum;
+                }
+            }
+            for (intouter = 0; outer<rowsOfmatrix1; outer++) {  // printing output matrix
+                for (intinner = 0; inner<coloumnsOfMatrix2; inner++) {
+                    System.out.print(result[outer][inner] + " ");
+                }
+                System.out.println();
+            }
+        } else {
+            System.out.println("matrix multiplication is not possible");
+        }
+        in.close();  // scanner close
+    }
+
+    publicstaticvoid main(String[] args) {
+        MultiplicationOfMatrixmatrix = newMultiplicationOfMatrix();  // object creation
+        matrix.multiplication();  // method calling
+
+    }
+
